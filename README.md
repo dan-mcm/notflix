@@ -20,6 +20,12 @@ cd server
 npm run start
 ```
 
+App was developed on Windows 11 device with following:
+```
+node v19.0.0
+npm 8.19.2
+```
+
 ## Environmental Variables
 The server uses an **API_KEY** env variable to make calls to The Movie Database API.
 You can read up on how to obtain a key [here](https://developers.themoviedb.org/3/getting-started/authentication).

@@ -27,6 +27,7 @@ function generatePosterURL(potentialPoster) {
   return poster
 }
 
+// TODO add pagination...
 function Search(){
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResult, setSearchResult] = useState([]);
@@ -52,6 +53,7 @@ function Search(){
         Totals Results: {totalResults}<br />
         {(totalResults === 0) ? "No Results Found" :
         searchResult.map(film => Movie(
+          film.id,
           film.original_title,
           film.release_date,
           generatePosterURL(film.poster_path),

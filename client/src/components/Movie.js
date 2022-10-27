@@ -1,10 +1,19 @@
-function Movie(title, release, poster) {
+import AddFavourite from './AddFavourite';
+
+function Movie(id, title, release, poster) {
   return (
-    <div>
+    <>
       <h2>{title}</h2>
       <i>{release}</i><br />
       <img src={poster} alt={title}/>
-    </div>
+      <br />
+      <AddFavourite
+        id={id}
+        title={title}
+        release={release}
+        poster={poster}
+      />
+    </>
   )
 }
 
