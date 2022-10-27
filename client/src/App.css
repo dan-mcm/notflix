@@ -42,3 +42,29 @@ h3 {
   padding-top: 10px;
   font-weight: bold;
 }
+
+.ant-menu-item-selected {
+   color: red !important;
+ }
+
+ .ant-menu-item-selected a {
+    color: red !important;
+  }
+
+ .ant-menu-item:hover {
+   color: pink !important;
+ }
+
+ .ant-menu-item:hover a {
+   color: red !important;
+ }
+
+.ant-btn.ant-btn-danger{
+  background-color: darkred !important;
+  background: darkred !important;
+}
+
+.ant-btn.ant-btn-danger:hover{
+  background-color: dred !important;
+  background: red !important;
+}
