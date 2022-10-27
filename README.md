@@ -19,3 +19,13 @@ To run the server:
 cd server
 npm run start
 ```
+
+## Environmental Variables
+The server uses an **API_KEY** env variable to make calls to The Movie Database API.
+You can read up on how to obtain a key [here](https://developers.themoviedb.org/3/getting-started/authentication).
+
+The project uses dotenv, enabling you to use .env files in the `server` root directory.
+
+```
+API_KEY=your-personal-key-here
+```
