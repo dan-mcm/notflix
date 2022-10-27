@@ -1,4 +1,5 @@
 import AddFavourite from './AddFavourite';
+import RemoveFavourite from './RemoveFavourite';
 import { Col } from 'antd';
 
 // some custom inline styles to overwrite antd
@@ -33,7 +34,13 @@ function Movie(id, title, release, poster, isFavourite) {
           release={release}
           poster={poster}
           isFavourite={isFavourite}
-        /><br /></> : ''}
+        /><br /></> :  <><RemoveFavourite
+          id={id}
+          title={title}
+          release={release}
+          poster={poster}
+          isFavourite={isFavourite}
+        /><br /></>}
       </div>
     </Col>
   )

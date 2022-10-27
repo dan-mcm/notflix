@@ -7,7 +7,18 @@ export const favouritesReducer = function (state=initialFavouritesState, action)
         ...state,
         favourites: { ...state.favourites, [action.payload.id]: action.payload },
       };
-    default:
-      return state.favourites;
+    case "removeFavourites":
+      console.log('you tired to remove')
+      return {
+        ...state,
+        favourites: Object.keys(state.favourites)
+        .filter((item) => item !== action.payload.toString())
+        .reduce(
+          (object, item) => ({ ...object, [item]: state.favourites[item] }),
+          {}
+        ),
+      };
+      default:
+        return state.favourites;
   }
 }
