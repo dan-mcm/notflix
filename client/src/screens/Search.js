@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
 import axios from "axios"
 import Movie from "../components/Movie";
-import { Pagination } from 'antd';
-
+import { Button, Divider, Pagination, Row } from 'antd';
+import { SearchOutlined } from '@ant-design/icons';
 
 // page variable likely useful for pagination
 function searchQuery(query, page, setSearchResult, setTotalResults, setCurrentPage, setTotalPages) {
@@ -56,17 +56,17 @@ function Search(){
   }
 
   return(
-    <div>
-      <h2>Search</h2>
-      <p>Search Elements Here</p>
+    <div className="Search">
+      <h2>Movie Search</h2>
+      <Divider/>
       <input
         type="text"
         placeholder="Enter Search..."
         value={searchTerm}
         onChange={handleChange}
       />{'   '}
-      <button onClick={() =>  searchQuery(searchTerm, currentPage, setSearchResult, setTotalResults, setCurrentPage, setTotalPages)}>Search</button><br/>
-      <div>
+      <Button type="danger" icon={<SearchOutlined/>} onClick={() => searchQuery(searchTerm, currentPage, setSearchResult, setTotalResults, setCurrentPage, setTotalPages)}>Search</Button>
+      <br/><br/>
         {(totalResults === 0) ? 'No Results Found.' :
         <Pagination
           showSizeChanger={false}
@@ -76,7 +76,7 @@ function Search(){
           onChange={(page) => setCurrentPage(page)}
         />}
         <br/><br/>
-        <div>
+        <Row gutter={[16,16]} justify="center">
           {searchResult.map(film => Movie(
             film.id,
             film.original_title,
@@ -84,9 +84,8 @@ function Search(){
             generatePosterURL(film.poster_path)
             ))
           }
-        </div>
+        </Row>
       </div>
-    </div>
   )
 }
 

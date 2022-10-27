@@ -4,11 +4,18 @@ import Search from './screens/Search';
 import Nav from './components/Nav';
 import { Route, Routes } from "react-router-dom";
 
+// overwriting antd style
+const customTitleStyle = {
+  color: 'white',
+  fontSize: '2em',
+  textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
+}
+
 function App() {
   return (
-    <div>
+    <div className="App">
       <header className="App-header">
-        <h1>Notflix</h1>
+        <h1 style={customTitleStyle}>Notflix</h1>
       </header>
       <Nav/>
       <Routes>
