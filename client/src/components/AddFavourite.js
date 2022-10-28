@@ -1,6 +1,6 @@
-import { useDispatch } from 'react-redux';
-import { Button } from 'antd';
-import { HeartOutlined } from '@ant-design/icons';
+import { useDispatch } from "react-redux";
+import { Button } from "antd";
+import { HeartOutlined } from "@ant-design/icons";
 
 // values obtained via redux store
 function AddFavourite(props) {
@@ -9,9 +9,14 @@ function AddFavourite(props) {
 
   return (
     <div>
-      <Button type="danger" icon={<HeartOutlined />} shape="circle" onClick={() => dispatch({type: 'addFavourites', payload: props})}/>
+      <Button
+        type="danger"
+        icon={<HeartOutlined />}
+        shape="circle"
+        onClick={() => dispatch({ type: "addFavourites", payload: props })}
+      />
     </div>
-  )
+  );
 }
 
 export default AddFavourite;

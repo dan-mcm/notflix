@@ -1,6 +1,6 @@
-import { useDispatch } from 'react-redux';
-import { Button } from 'antd';
-import { DeleteOutlined } from '@ant-design/icons';
+import { useDispatch } from "react-redux";
+import { Button } from "antd";
+import { DeleteOutlined } from "@ant-design/icons";
 
 // values obtained via redux store
 function RemoveFavourite(props) {
@@ -9,9 +9,16 @@ function RemoveFavourite(props) {
 
   return (
     <div>
-      <Button type="danger" icon={<DeleteOutlined />} shape="circle" onClick={() => dispatch({type: 'removeFavourites', payload: props.id})}/>
+      <Button
+        type="danger"
+        icon={<DeleteOutlined />}
+        shape="circle"
+        onClick={() =>
+          dispatch({ type: "removeFavourites", payload: props.id })
+        }
+      />
     </div>
-  )
+  );
 }
 
 export default RemoveFavourite;

@@ -13,6 +13,12 @@ To run the application:
 ```
 cd client
 npm run start
+
+# this command will run prettier and reformat code
+npm run pretify
+
+# this command will run xo linter and return warnings & errors
+npm run lint
 ```
 To run the server:
 ```
