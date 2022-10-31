@@ -6,7 +6,7 @@ const dotenv = require('dotenv').config();
 const theMovieDBURI = `https://api.themoviedb.org/3`;
 
 // private API configured via .env variables
-const apiKey = process.env.api_key
+const apiKey = process.env.API_KEY
 
 // redirect api query using private apiKey
 function movieQuery(key){
