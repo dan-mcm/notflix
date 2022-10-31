@@ -16,7 +16,6 @@ function movieQuery(key){
 }
 
 function movieSearchQuery(key, query, page){
-  console.log('Server URL Query:', `${theMovieDBURI}/search/movie?api_key=${key}&language=en-US&query=${query}&page=${page}&include_adult=false`)
   return axios.get(`${theMovieDBURI}/search/movie?api_key=${key}&language=en-US&query=${query}&page=${page}&include_adult=false`)
     .then(res => res.data)
     .catch(err => console.log(err))
@@ -24,7 +23,6 @@ function movieSearchQuery(key, query, page){
 
 // fetches key, then gets apiquery based on it (maybe async await better)
 router.get("/moviesearch/:query/:page", function(req, res, next){
-  console.log('DEBUG REQ PARAMS:', req.params)
   movieSearchQuery(apiKey, req.params.query, req.params.page)
   .then(result => res.send(result))
   .catch(err => console.log(err))

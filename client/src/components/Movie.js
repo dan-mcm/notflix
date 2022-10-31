@@ -20,34 +20,34 @@ const imageDimensions = {
   maxHeight: "200px",
 };
 
-function Movie(id, title, release, poster, isFavourite) {
+function Movie(props) {
   return (
     <Col style={maxDimensions} xs={24} md={10} xl={6}>
       <div style={borderStyle}>
-        <h3>{title}</h3>
-        <p>Released: {release}</p>
-        <img style={imageDimensions} src={poster} alt={title} />
+        <h3>{props.title}</h3>
+        <p>Released: {props.release}</p>
+        <img style={imageDimensions} src={props.poster} alt={props.title} />
         <br />
         <br />
-        {!isFavourite ? (
+        {!props.isFavourite ? (
           <>
             <AddFavourite
-              id={id}
-              title={title}
-              release={release}
-              poster={poster}
-              isFavourite={isFavourite}
+              id={props.id}
+              title={props.title}
+              release={props.release}
+              poster={props.poster}
+              isFavourite={props.isFavourite}
             />
             <br />
           </>
         ) : (
           <>
             <RemoveFavourite
-              id={id}
-              title={title}
-              release={release}
-              poster={poster}
-              isFavourite={isFavourite}
+              id={props.id}
+              title={props.title}
+              release={props.release}
+              poster={props.poster}
+              isFavourite={props.isFavourite}
             />
             <br />
           </>

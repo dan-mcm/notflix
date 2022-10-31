@@ -19,8 +19,6 @@ function searchQuery(
   return axios
     .get(`http://localhost:9000/moviedb/moviesearch/${query}/${page}`) //TODO url parse protection
     .then((movies) => {
-      console.log(`passed variables`, query, page);
-      console.log(movies.data);
       setSearchResult(movies.data.results);
       setTotalResults(movies.data.total_results);
       setCurrentPage(movies.data.page);
@@ -114,14 +112,14 @@ function Search() {
       <br />
       <br />
       <Row gutter={[16, 16]} justify="center">
-        {searchResult.map((film) =>
-          Movie(
-            film.id,
-            film.original_title,
-            film.release_date,
-            generatePosterURL(film.poster_path)
-          )
-        )}
+        {searchResult.map((film) => (
+          <Movie
+            id={film.id}
+            title={film.original_title}
+            release={film.release_date}
+            poster={generatePosterURL(film.poster_path)}
+          />
+        ))}
       </Row>
     </div>
   );

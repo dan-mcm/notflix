@@ -11,15 +11,15 @@ function Favourites() {
       <Divider />
       <Row gutter={16} justify="center">
         {typeof favourites !== "undefined"
-          ? Object.keys(favourites).map((key) =>
-              Movie(
-                favourites[key].id,
-                favourites[key].title,
-                favourites[key].release,
-                favourites[key].poster,
-                true
-              )
-            )
+          ? Object.keys(favourites).map((key) => (
+              <Movie
+                id={favourites[key].id}
+                title={favourites[key].title}
+                release={favourites[key].release}
+                poster={favourites[key].poster}
+                isFavourite={true}
+              />
+            ))
           : "No Favourites Saved."}
       </Row>
     </div>

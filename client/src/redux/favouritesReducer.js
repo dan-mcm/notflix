@@ -14,7 +14,6 @@ export const favouritesReducer = function (
         },
       };
     case "removeFavourites":
-      console.log("you tired to remove");
       return {
         ...state,
         favourites: Object.keys(state.favourites)
